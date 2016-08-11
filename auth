@@ -2,7 +2,6 @@
 import ast
 import requests
 import re
-import os
 
 reqobj = requests.get('http://www.google.com')
 url = str(reqobj.url)
@@ -15,5 +14,3 @@ if "fgtauth" in url:
 	info["magic"] = magic
 	reqobj = requests.post(url, data = info, timeout = (12.4, 5))
 	fileobj.close()
-
-os.system("touch /daa.txt")
