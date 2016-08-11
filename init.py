@@ -16,7 +16,7 @@ subprocess.Popen("chmod +x /etc/network/if-up.d/auth", shell=True)
 outp = subprocess.Popen("ls /sys/class/net/", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 out,err = outp.communicate()
 out = out.decode("utf-8").split()
-out = out.sort()
+out.sort()
 string = "\nauto " + out[-1] + "\npost-up /etc/network/if-up.d/auth"
 fileobj = open("/etc/network/interfaces","a")
 fileobj.write(string)
