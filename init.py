@@ -11,8 +11,7 @@ info["username"] = username
 info["password"] = password
 json.dump(info,fileobj)
 fileobj.close()
-subprocess.Popen("cp auth information.json /etc/network/if-up.d/", shell=True)
-subprocess.Popen("chmod +x /etc/network/if-up.d/auth", shell=True)
+subprocess.Popen("cp auth information.json /etc/network/if-up.d/;chmod +x /etc/network/if-up.d/auth", shell=True)
 outp = subprocess.Popen("ls /sys/class/net/", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 out,err = outp.communicate()
 out = out.decode("utf-8").split()
