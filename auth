@@ -3,7 +3,7 @@ import ast
 import requests
 import re
 
-reqobj = requests.get('http://www.google.com')
+reqobj = requests.get('http://www.aitpune.com')
 url = str(reqobj.url)
 
 if "fgtauth" in url:
