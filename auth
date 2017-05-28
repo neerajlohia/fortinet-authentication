@@ -1,16 +1,14 @@
-#!/usr/bin/env python
 import ast
 import requests
 import re
+import os
 
 reqobj = requests.get('http://www.aitpune.com')
 url = str(reqobj.url)
 
 if "fgtauth" in url:
-	magic = re.search('http.*\?',url).group()
-	magic = url.replace(magic,"")
-	fileobj = open("information.json","r")
-	info = ast.literal_eval(fileobj.read())
-	info["magic"] = magic
-	reqobj = requests.post(url, data = info, timeout = (12.4, 5))
-	fileobj.close()
+        magic = re.search('http.*\?',url).group()
+        magic = url.replace(magic,"")
+        info["magic"] = magic
+        reqobj = requests.post(url, data = info, timeout = (1, 1))
+        fileobj.close()
