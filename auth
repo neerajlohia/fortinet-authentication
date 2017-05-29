@@ -1,7 +1,5 @@
-import ast
 import requests
 import re
-import os
 
 reqobj = requests.get('http://www.aitpune.com')
 url = str(reqobj.url)
